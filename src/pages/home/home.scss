@@ -1,0 +1,27 @@
+page-home {
+
+  #container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #logo{
+    width: 70%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .buttons{
+    background: linear-gradient(to top right, #FF5F6D, #FFC371);
+    border-radius: 5px;
+    border: none;
+    color: rgb(250,250,250);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6em;
+    width: 70%;
+    height: 50px;
+    margin-bottom: 5px;
+  }
+
+}

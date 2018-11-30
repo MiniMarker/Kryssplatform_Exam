@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Send Melding</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <section class="flexBox">
+
+    <img src="{{book.imgSrc}}" class="profilePicture">
+    <h3 text-center>Send en melding til<br/>{{book.user}}</h3>
+    <textarea class="guiInputs" [(ngModel)]="messageText" placeholder="Melding"></textarea>
+    <button class="guiButtons" (click)="sendMessage()">Send</button>
+
+  </section>
+</ion-content>

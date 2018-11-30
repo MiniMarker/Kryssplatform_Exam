@@ -1,0 +1,56 @@
+
+
+page-main {
+
+  #container{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: revert;
+    align-content: center;
+    justify-content: space-evenly;
+  }
+
+  .child{
+    flex-grow: 1;
+    align-self: center;
+    max-width: 45%;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background: linear-gradient(to top right, #FF5F6D, #FFC371);
+  }
+
+  .filterBar{
+    background-color: white;
+    border-bottom: 0.5px solid rgba(170,170,170,0.2);
+  }
+
+  #postImg{
+    border-radius: 5px;
+  }
+
+  #postTitle{
+    font-weight: bold;
+  }
+
+  #postAuthor{
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .postText{
+    color: rgb(250,250,250);
+    font-family: 'Open Sans', sans-serif;
+    margin: 8px;
+  }
+
+  #searchbutton{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    height: 40px;
+    width: 40%;
+  }
+}
+
+

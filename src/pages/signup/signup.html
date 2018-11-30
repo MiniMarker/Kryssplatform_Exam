@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <section class="flexBox" id="pictureField">
+    <button *ngIf="previewImg.length == 0" class="buttons" (click)="executeCamera()">Ta bilde</button>
+    <button *ngIf="previewImg.length == 0" class="buttons" (click)="choosePicture()">Velg fra bibliotek</button>
+
+    <img class="profilePicture" *ngIf="previewImg.length > 0" [src]="'data:image/jpeg;base64,' + previewImg"/>
+
+  </section>
+
+  <section class="flexBox" id="inputFields">
+    <input class="inputs" type="text" placeholder="Firstname" [(ngModel)]="user.firstName"/>
+    <input class="inputs" type="text" placeholder="Lastname" [(ngModel)]="user.lastName"/>
+    <input class="inputs" type="email" placeholder="Email" [(ngModel)]="user.username"/>
+    <input class="inputs" type="password" placeholder="Password" [(ngModel)]="user.password"/>
+
+  </section>
+
+
+  <section class="flexBox">
+    <button class="buttons" (click)="registerUser()">Signup</button>
+    <button ion-button clear (click)="goToLoginPage()">Go to login page</button>
+  </section>
+</ion-content>

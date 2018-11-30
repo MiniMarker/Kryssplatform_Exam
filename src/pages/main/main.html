@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Reebooked</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showFilterOptions()">
+        <ion-icon name="switch"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-grid class="filterBar" *ngIf="showFilterOption">
+    <ion-row>
+      <ion-searchbar animated="false"
+                     [(ngModel)]="titleFilter"
+                     (ionChange)="filterBooksByTitle()"
+                     (ionClear)="resetFilter()"></ion-searchbar>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Kategori</ion-label>
+          <ion-select (ionChange)="filterBooksByCategory()" [(ngModel)]="categoryFilter" placeholder="Kategori">
+            <ion-option value="technology">Teknologi</ion-option>
+            <ion-option value="music">Musikk/studio</ion-option>
+            <ion-option value="film">Film/medier</ion-option>
+            <ion-option value="health">Helse/livsstil</ion-option>
+            <ion-option value="design">Design/kommunikasjon</ion-option>
+            <ion-option value="leadership">Ledelse/HR</ion-option>
+            <ion-option value="marketing">Markedsføring/innovasjon</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-item>
+        <ion-range [min]="0"
+                   [max]="1000"
+                   step="100"
+                   snaps="true"
+                   [pin]="true"
+                   [(ngModel)]="priceFilter"
+                   (ionChange)="filterItemsByPrice()">
+
+          <ion-label range-left>Min pris:</ion-label>
+
+        </ion-range>
+      </ion-item>
+    </ion-row>
+
+    <ion-row class="horizontalFlexbox">
+      <button class="guiButtons" (click)="filterBooksByIsbn()">Scan</button>
+      <button class="guiButtons" (click)="resetFilter()">Reset</button>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+
+<ion-content>
+
+  <div id="container">
+    <div class="child" *ngFor="let post of currentItemsArray" (click)="goToBookDetails(post)">
+      <img id="postImg" src="{{post.imgSrc}}"/>
+      <div class="postText" id="postTitle">{{post.title}}</div>
+      <div class="postText" id="postAuthor">{{post.author}}</div>
+    </div>
+  </div>
+
+</ion-content>

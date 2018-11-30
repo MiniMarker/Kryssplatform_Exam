@@ -1,0 +1,71 @@
+page-respond {
+  .guiInputs {
+    height: auto;
+  }
+
+  #chatInputFields {
+    width: 100%;
+    position: fixed;
+    bottom: 50px;
+  }
+
+  #messageTextInput:focus{
+    bottom: 0px;
+  }
+
+  #messageList {
+    max-height: 63vh;
+    border-top: 0.5px solid rgba(40, 40, 40, 0.4);
+    border-bottom: 0.5px solid rgba(40, 40, 40, 0.4);
+    width: 100%;
+    display: block !important;
+    overflow: scroll !important;
+  }
+
+  #chatPictureField {
+    height: 60px;
+  }
+
+  #chatMessageBookPicture {
+    position: relative;
+    height: 50px;
+    top: 5px;
+    left: 10px;
+  }
+
+  #chatBookTitle{
+    position: relative;
+    top: -50px;
+    left: 60px;
+    max-width: 80%;
+  }
+
+  .textCircle{
+    width: fit-content;
+    border-radius: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  #greyCircle {
+    background-color: #eff0f4;
+    margin-left: 10px;
+    margin-right: auto;
+    max-width: 90%;
+  }
+
+  #blueCircle {
+    background-color: #3399ff;
+    color: white;
+    text-align: end;
+    margin-left: auto;
+    margin-right: 10px;
+    max-width: 90%;
+  }
+
+  #timeText{
+    font-size: 0.7em;
+    text-align: center;
+    color: #777777;
+  }
+}

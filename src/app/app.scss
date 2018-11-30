@@ -1,0 +1,91 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+
+@mixin squareImages($size){
+  width: $size;
+  max-height: $size;
+  object-fit: cover;
+
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.pictureField{
+  margin-top: 20px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.flexBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.horizontalFlexbox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.buttons{
+  background: linear-gradient(to top right, #FF5F6D, #FFC371);
+  border-radius: 5px;
+  border: none;
+  color: rgb(250,250,250);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.6em;
+  width: 70%;
+  height: 45px;
+  margin-bottom: 5px;
+}
+
+.guiButtons{
+  background: linear-gradient(to top right, #FF5F6D, #FFC371);
+  border-radius: 5px;
+  border: none;
+  color: rgb(250,250,250);
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 1.2em;
+  height: 40px;
+  width: 40%;
+}
+
+.inputs{
+  border: 2px solid rgb(0, 139, 139);
+  border-radius: 5px;
+  border-image-slice: 1;
+  padding: 10px;
+  width: 70%;
+  margin: 3px;
+}
+
+.guiInputs{
+  border: 2px solid rgb(0, 139, 139);
+  border-radius: 5px;
+  border-image-slice: 1;
+  padding: 10px;
+  width: 90%;
+  margin: 3px;
+  height: 40px;
+}
+
+.profilePicture{
+  border-radius: 5px;
+  max-height: 200px;
+}
+
+.squareListImg{
+  @include squareImages(30)
+}
+
+html* {
+  font-family: 'Open Sans', sans-serif;
+}

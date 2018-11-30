@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{book.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <section class="flexBox pictureField">
+    <img class="profilePicture" src="{{book.imgSrc}}"/>
+  </section>
+
+  <section class="flexBox">
+    <h1 text-center>{{book.title}}</h1>
+    <h3><i>{{book.author}}</i></h3>
+    <h6>{{book.condition}}</h6>
+    <h2>{{book.price | currencyDetailer}}</h2>
+  </section>
+
+  <div class="horizontalFlexbox" *ngIf="!isBookOwedBySignedInUser()">
+
+    <button class="guiButtons" (click)="goToSendMessagePage(book)">Send en melding</button>
+    <button class="guiButtons" (click)="goToPurchasePage()">Kjøp boken</button>
+
+  </div>
+  <p padding><b>Beskrivelse:</b> <br/>{{book.desc}}</p>
+  <br/>
+
+  <section id="userDetails" class="horizontalFlexbox">
+
+    <img id="userProfilePicture" src="{{book.profilePictureUrl}}"/>
+
+    <div class="flexBox">
+      <h3 id="username">{{book.user}}</h3>
+      <h6 text-wrap="true">{{book.location[2]}}</h6>
+    </div>
+
+  </section>
+
+
+  <div #map id="map"></div>
+
+  <button ion-button clear icon-left (click)="openMapInMaps()">
+    <ion-icon name="open"></ion-icon>
+    Åpne i Google Maps
+  </button>
+
+</ion-content>

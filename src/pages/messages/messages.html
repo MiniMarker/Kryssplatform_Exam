@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Meldinger</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <section>
+
+    <h3 padding>Samtaler med:</h3>
+
+    <ion-list>
+
+      <ion-item *ngFor="let chat of usersMessagesArray" (click)="goToChatPage(chat)">
+        <ion-thumbnail item-start>
+          <img class="squareListImg" src="{{chat.bookImgSrc}}">
+          <!-- <img class="squareListImg" *ngIf="!checkWhichNameToDisplay(chat)" src="{{chat.reciverImg}}"> -->
+        </ion-thumbnail>
+        <h2 *ngIf="checkWhichNameToDisplay(chat)">{{chat.senderName}}</h2>
+        <h2 *ngIf="!checkWhichNameToDisplay(chat)">{{chat.reciverName}}</h2>
+        <p>Siste melding: {{chat.latestMessageTime}}</p>
+      </ion-item>
+    </ion-list>
+  </section>
+
+</ion-content>

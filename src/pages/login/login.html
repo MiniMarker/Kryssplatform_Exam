@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <section class="flexBox" id="inputFields">
+    <input class="inputs" type="email" placeholder="Email" [(ngModel)]="user.username"/>
+    <input class="inputs" type="password" placeholder="Password" [(ngModel)]="user.password"/>
+  </section>
+
+  <section class="flexBox" id="buttons">
+    <button class="buttons" (click)="logInUser()">Login</button>
+    <button ion-button clear (click)="goToSignupPage()">Go to signup page</button>
+  </section>
+
+
+</ion-content>

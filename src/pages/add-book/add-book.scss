@@ -1,0 +1,25 @@
+page-add-book {
+
+  #addBookFlexbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .userDetails{
+    height: 200px;
+  }
+
+  #addBookPicture{
+    width: 100%;
+  }
+
+  #addPostButton{
+    margin-top: 20px;
+  }
+
+  #priceInput{
+    font-size: 1.8em;
+  }
+}

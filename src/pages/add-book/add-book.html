@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Legg til</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <section class="flexBox pictureField">
+    <button *ngIf="previewImg.length == 0" class="buttons" (click)="executeCamera()">
+      <ion-icon name="camera"></ion-icon>
+      Ta bilde
+    </button>
+
+    <button *ngIf="previewImg.length == 0" class="buttons" icon-left (click)="choosePicture()">
+      <ion-icon name="photos"></ion-icon>
+      Velg bilde
+    </button>
+
+    <img class="profilePicture" *ngIf="previewImg.length > 0" [src]="'data:image/jpeg;base64,' + previewImg"/>
+  </section>
+
+  <section class="horizontalFlexbox">
+
+    <button class="guiButtons" (click)="showLocationActionSheet()">Legg til sted</button>
+
+    <button class="guiButtons" (click)="showInfoActionSheet()">Legg til info</button>
+
+  </section>
+
+
+    <section class="flexBox">
+
+      <p>{{location.formatted_name}}</p>
+
+      <input *ngIf="addInfoFields" class="guiInputs" [(ngModel)]="book.isbn" placeholder="ISBN (Anbefalt)"/>
+
+      <input *ngIf="addInfoFields" class="guiInputs" [(ngModel)]="book.title" placeholder="Tittel"/>
+
+      <input *ngIf="addInfoFields" class="guiInputs" [(ngModel)]="book.author" placeholder="Forfatter"/>
+
+      <textarea *ngIf="addInfoFields" class="guiInputs" [(ngModel)]="book.description"
+                placeholder="Beskrivelse"></textarea>
+
+
+      <input class="guiInputs" id="priceInput" type="tel" [(ngModel)]="book.price" placeholder="Pris">
+
+      <br/>
+      <!-- Jeg fant ikke ut hvordan man kan style denne -->
+      <ion-item no-lines>
+        <ion-label>Tilstand</ion-label>
+        <ion-select [(ngModel)]="book.condition" placeholder="Tilstand">
+          <ion-option>Ny/uåpnet</ion-option>
+          <ion-option>Uten markeringen</ion-option>
+          <ion-option>Med markeringer</ion-option>
+          <ion-option>Slitt</ion-option>
+          <ion-option>Veldig slitt</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Kategori</ion-label>
+        <ion-select [(ngModel)]="book.category" placeholder="Kategori">
+          <ion-option value="technology">Teknologi</ion-option>
+          <ion-option value="music">Musikk/studio</ion-option>
+          <ion-option value="film">Film/medier</ion-option>
+          <ion-option value="health">Helse/livsstil</ion-option>
+          <ion-option value="design">Design/kommunikasjon</ion-option>
+          <ion-option value="leadership">Ledelse/HR</ion-option>
+          <ion-option value="marketing">Markedsføring/innovasjon</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <button class="buttons" id="addPostButton" (click)="addPost()">Legg til</button>
+
+    </section>
+
+</ion-content>

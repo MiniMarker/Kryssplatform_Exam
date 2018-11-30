@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Profil</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="signOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <section class="flexBox" id="pictureField">
+    <img class="profilePicture" src="{{userDetails.profilePicture}}"/>
+
+      <h1>{{userDetails.name}}</h1>
+      <h3>{{userDetails.email}}</h3>
+  </section>
+
+  <section>
+
+    <h3 padding>Mine bøker</h3>
+
+    <ion-list>
+
+      <ion-item-sliding *ngFor="let post of posts | async">
+        <ion-item (click)="goToBookDetails(post)">
+          <ion-thumbnail item-start>
+            <img class="squareListImg" src="{{post.imgSrc}}">
+          </ion-thumbnail>
+          <h2>{{post.title}}</h2>
+          <p>Sidevisninger: {{post.pageVisits}}</p>
+        </ion-item>
+
+        <ion-item-options side="right" (click)="deletePost(post)">
+          <button ion-button color="danger">
+            <ion-icon name="trash"></ion-icon>
+            Slett post
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+
+    </ion-list>
+  </section>
+</ion-content>

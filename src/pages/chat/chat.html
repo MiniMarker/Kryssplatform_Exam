@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title *ngIf="!checkWhichUserIsSender(chat)">Chat med {{chat.senderName}}</ion-title>
+    <ion-title *ngIf="checkWhichUserIsSender(chat)">Chat med {{chat.reciverName}}</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <section id="chatPictureField">
+    <img src="{{chat.bookImgSrc}}" id="chatMessageBookPicture" class="profilePicture"/>
+    <h4 id="chatBookTitle" text-wrap="true">{{chat.bookTitle}}</h4>
+  </section>
+
+
+  <section>
+
+    <div id="messageList">
+      <div text-wrap="true" *ngFor="let message of chat2.messages">
+
+        <p id="timeText">{{message.time}}</p>
+
+        <div class="textCircle" id="blueCircle" *ngIf="checkWhichUserIsSender(message)">
+          <h6>{{message.sender}}</h6>
+          <p text-wrap="true">{{message.message}}</p>
+        </div>
+
+        <div class="textCircle" id="greyCircle" *ngIf="!checkWhichUserIsSender(message)">
+          <h6>{{message.sender}}</h6>
+          <p text-wrap="true">{{message.message}}</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="horizontalFlexbox" id="chatInputFields">
+
+    <textarea class="guiInputs" id="messageTextInput" [(ngModel)]="messageText" placeholder="Melding"></textarea>
+    <button type="submit" class="guiButtons" (click)="respondToMessage()">Send</button>
+
+  </section>
+</ion-content>

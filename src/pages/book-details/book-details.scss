@@ -1,0 +1,19 @@
+page-book-details {
+
+  #map{
+    height: 200px;
+  }
+
+  #userDetails{
+    background-color: rgb(240,240,240);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 0.5px solid rgba(100,100,100,0.4);
+    border-bottom: 0.5px solid rgba(100,100,100,0.4);
+  }
+
+  #userProfilePicture {
+    height: 120px;
+    border-radius: 5px;
+  }
+}
