@@ -3,7 +3,7 @@
 This repo contains my project for the exam delivery for TDS200 - Kryssplatform App-utvikling.
 This is an application made in Ionic 3 and represents an application where a user can sell used books.
 
-For more information (in norwegian) on how this app was made, please read the documentation for this project [HERE]("./Reebooked_dokumentasjon.pdf")
+For more information (in norwegian) on how this app was made, please read the documentation for this project [HERE](Reebooked_dokumentasjon.pdf)
 
 ## Installation
 
